@@ -44,6 +44,7 @@
         <div></div>
       </div>
       <ul id="nav-links">
+        <li><button id="darkToggle" aria-label="Toggle dark mode">🌙</button></li>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -80,15 +81,46 @@
 
   <script>
     const navLinks = document.getElementById('nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const root = document.documentElement;
+    const toggle = document.getElementById('darkToggle');
+
     function toggleMenu(e) {
       e.stopPropagation();
       navLinks.classList.toggle('active');
     }
+
     document.addEventListener('click', function(e) {
       if (!e.target.closest('nav')) {
         navLinks.classList.remove('active');
       }
     });
+
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        root.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = '☀️';
+      } else {
+        root.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌙';
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+
+    const userPref = localStorage.getItem('theme');
+    if (userPref) {
+      setTheme(userPref);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
   </script>
 </body>
 </html>
