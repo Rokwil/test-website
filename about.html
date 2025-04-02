@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Rokwil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">ROKWIL</div>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu(event)">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>About Rokwil</h1>
+      <p>Our journey, vision, and mission.</p>
+    </section>
+    <section class="intro">
+      <h2>From Soil to Skyline</h2>
+      <p>Rokwil started with a simple piece of farmland and a big idea: to become one of South Africa’s most trusted property developers. Today, we build industrial parks, commercial warehouses, and infrastructure for some of the country’s leading brands.</p>
+      <p>We value sustainability, efficiency, and trust — and we bring those into every project we touch.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rokwil Property & Development. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navLinks = document.getElementById('nav-links');
+    function toggleMenu(e) {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
