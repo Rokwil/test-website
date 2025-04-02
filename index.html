@@ -6,10 +6,21 @@
   <title>Rokwil | Property & Development</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    #darkToggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--accent-color);
+      margin-left: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">ROKWIL</div>
+    <button id="darkToggle" aria-label="Toggle dark mode">🌓</button>
     <nav>
       <div class="hamburger" onclick="toggleMenu(event)">
         <div></div>
@@ -44,6 +55,8 @@
   <script>
     const navLinks = document.getElementById('nav-links');
     const hamburger = document.querySelector('.hamburger');
+    const root = document.documentElement;
+    const toggle = document.getElementById('darkToggle');
 
     function toggleMenu(e) {
       e.stopPropagation();
@@ -55,6 +68,28 @@
         navLinks.classList.remove('active');
       }
     });
+
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        root.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+
+    const userPref = localStorage.getItem('theme');
+    if (userPref) {
+      setTheme(userPref);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
   </script>
 </body>
 </html>
