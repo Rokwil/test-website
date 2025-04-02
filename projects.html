@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Rokwil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">ROKWIL</div>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu(event)">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Our Projects</h1>
+      <p>Developments that deliver results.</p>
+    </section>
+    <section class="intro">
+      <h2>Featured Developments</h2>
+      <p>We specialize in large-scale industrial warehousing and commercial space for major businesses across South Africa.</p>
+      <div style="margin-top: 2rem; display: grid; gap: 2rem;">
+        <div>
+          <h3>Keystone Industrial Park</h3>
+          <p>Strategically located logistics and warehouse development, home to brands like Pep and Mr Price.</p>
+        </div>
+        <div>
+          <h3>Rokwil Distribution Hub</h3>
+          <p>Modern, high-efficiency warehousing with solar integration and smart access infrastructure.</p>
+        </div>
+        <div>
+          <h3>Westside Commercial Zone</h3>
+          <p>A mixed-use park combining industrial units with smart office space and green corridors.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rokwil Property & Development. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navLinks = document.getElementById('nav-links');
+    function toggleMenu(e) {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
