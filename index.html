@@ -119,7 +119,7 @@
     }
   </style>
 </head>
-<body onclick="closeMenu(event)">
+<body>
   <header>
     <div class="logo">ROKWIL</div>
     <nav>
@@ -154,19 +154,19 @@
   </footer>
 
   <script>
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.querySelector('.hamburger');
+
     function toggleMenu(e) {
       e.stopPropagation();
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('active');
+      navLinks.classList.toggle('active');
     }
 
-    function closeMenu(e) {
-      const nav = document.getElementById('nav-links');
-      const isClickInsideNav = e.target.closest('nav');
-      if (!isClickInsideNav && nav.classList.contains('active')) {
-        nav.classList.remove('active');
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        navLinks.classList.remove('active');
       }
-    }
+    });
   </script>
 </body>
 </html>
