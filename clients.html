@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clients | Rokwil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">ROKWIL</div>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu(event)">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Our Clients</h1>
+      <p>Trusted by industry-leading brands.</p>
+    </section>
+    <section class="intro">
+      <h2>Who We've Worked With</h2>
+      <p>We’re proud to have delivered infrastructure and property development services for some of South Africa’s most recognized brands.</p>
+      <ul style="margin-top: 2rem; list-style: none; padding: 0; font-weight: 500;">
+        <li>• Pep</li>
+        <li>• Mr Price</li>
+        <li>• ND Engineering</li>
+        <li>• Akamans</li>
+        <li>• More top-tier logistics and retail brands</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rokwil Property & Development. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navLinks = document.getElementById('nav-links');
+    function toggleMenu(e) {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('nav')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
