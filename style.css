@@ -1,6 +1,24 @@
-:root {
-  --accent-color: #1a1a1a;
+/* THEME VARIABLES */
+html.dark {
+  --bg-color: #111;
+  --text-color: #eee;
+  --accent-color: #fff;
+  --nav-bg: #1a1a1a;
+  --nav-text: #eee;
+  --card-bg: #222;
+  --border-color: #444;
 }
+html {
+  --bg-color: #fff;
+  --text-color: #111;
+  --accent-color: #1a1a1a;
+  --nav-bg: #f8f8f8;
+  --nav-text: #111;
+  --card-bg: #fff;
+  --border-color: #ddd;
+}
+
+/* BASE RESET */
 * {
   margin: 0;
   padding: 0;
@@ -8,16 +26,19 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #333;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
+
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #f8f8f8;
-  border-bottom: 1px solid #ddd;
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -27,6 +48,16 @@ header {
   font-weight: 700;
   color: var(--accent-color);
 }
+#darkToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--accent-color);
+  margin-left: 1rem;
+}
+
+/* NAVIGATION */
 nav {
   position: relative;
 }
@@ -50,13 +81,15 @@ nav {
 }
 #nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: var(--nav-text);
   font-weight: 500;
   transition: 0.2s;
 }
 #nav-links li a:hover {
   color: var(--accent-color);
 }
+
+/* MOBILE NAV */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -64,13 +97,13 @@ nav {
   #nav-links {
     display: none;
     flex-direction: column;
-    background: #fff;
+    background: var(--card-bg);
     position: absolute;
     top: 60px;
     right: 0;
     width: 200px;
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
     z-index: 100;
@@ -79,6 +112,8 @@ nav {
     display: flex;
   }
 }
+
+/* HERO SECTION */
 .hero {
   padding: 5rem 2rem 3rem;
   text-align: center;
@@ -89,20 +124,24 @@ nav {
 }
 .hero p {
   font-size: 1.125rem;
-  color: #666;
+  color: var(--text-color);
   margin-top: 0.5rem;
 }
+
+/* INTRO CONTENT */
 .intro {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
   text-align: center;
 }
+
+/* FOOTER */
 footer {
   padding: 1rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #888;
-  background: #f8f8f8;
-  border-top: 1px solid #ddd;
+  color: var(--text-color);
+  background: var(--nav-bg);
+  border-top: 1px solid var(--border-color);
 }
