@@ -6,21 +6,11 @@
   <title>Rokwil | Property & Development</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    #darkToggle {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: var(--accent-color);
-      margin-left: 1rem;
-    }
-  </style>
 </head>
 <body>
+  <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
   <header>
     <div class="logo">ROKWIL</div>
-    <button id="darkToggle" aria-label="Toggle dark mode">🌓</button>
     <nav>
       <div class="hamburger" onclick="toggleMenu(event)">
         <div></div>
@@ -73,9 +63,11 @@
       if (mode === 'dark') {
         root.classList.add('dark');
         localStorage.setItem('theme', 'dark');
+        toggle.textContent = '☀️';
       } else {
         root.classList.remove('dark');
         localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌙';
       }
     }
 
@@ -89,6 +81,8 @@
       setTheme(userPref);
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
+    } else {
+      setTheme('light');
     }
   </script>
 </body>
