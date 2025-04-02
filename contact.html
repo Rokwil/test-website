@@ -54,26 +54,24 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Contact Us</h1>
-      <p>Let's build something together.</p>
-    </section>
+<main>
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>Let’s build something together.</p>
+  </section>
 
-    <section class="intro">
-      <h2>Get in Touch</h2>
-      <p>We’d love to hear from you. Whether you’re looking for warehouse space or want to discuss a custom project, drop us a message below.</p>
+  <section class="intro">
+    <h2>Get in Touch</h2>
+    <p>We’d love to hear from you. Fill in the form below and we’ll get back to you soon.</p>
 
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-
-      <p style="margin-top: 2rem;">📍 Based in South Africa<br>✉️ Email: <a href=\"mailto:rod@rokwil.co.za\">rod@rokwil.co.za</a></p>
-    </section>
-  </main>
+    <form action="https://formspree.io/f/xyzenwzr" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
 
   <footer>
     <p>&copy; 2025 Rokwil Property & Development. All rights reserved.</p>
