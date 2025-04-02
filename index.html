@@ -119,11 +119,11 @@
     }
   </style>
 </head>
-<body>
+<body onclick="closeMenu(event)">
   <header>
     <div class="logo">ROKWIL</div>
     <nav>
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" onclick="toggleMenu(event)">
         <div></div>
         <div></div>
         <div></div>
@@ -154,9 +154,18 @@
   </footer>
 
   <script>
-    function toggleMenu() {
+    function toggleMenu(e) {
+      e.stopPropagation();
       const nav = document.getElementById('nav-links');
       nav.classList.toggle('active');
+    }
+
+    function closeMenu(e) {
+      const nav = document.getElementById('nav-links');
+      const isClickInsideNav = e.target.closest('nav');
+      if (!isClickInsideNav && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
     }
   </script>
 </body>
