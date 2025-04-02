@@ -48,14 +48,6 @@ header {
   font-weight: 700;
   color: var(--accent-color);
 }
-#darkToggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: var(--accent-color);
-  margin-left: 1rem;
-}
 
 /* NAVIGATION */
 nav {
@@ -144,4 +136,24 @@ footer {
   color: var(--text-color);
   background: var(--nav-bg);
   border-top: 1px solid var(--border-color);
+}
+
+/* DARK MODE TOGGLE BUTTON */
+#darkToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+}
+#darkToggle:hover {
+  background: var(--nav-bg);
+  transform: scale(1.05);
 }
